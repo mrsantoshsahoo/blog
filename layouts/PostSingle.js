@@ -1,6 +1,6 @@
 import config from "../config/config.json";
 import Base from "../layouts/Baseof";
-import InnerPagination from "../layouts/components/InnerPagination";
+import InnerPagination from "layouts/components/InnerPagination";
 import dateFormat from "../lib/utils/dateFormat";
 import { markdownify } from "../lib/utils/textConverter";
 import { DiscussionEmbed } from "disqus-react";
@@ -34,7 +34,6 @@ const PostSingle = ({
   disqusConfig.identifier = frontmatter.disqusId
     ? frontmatter.disqusId
     : config.settings.blog_folder + "/" + slug;
-
   return (
     <Base title={title} description={description}>
       <section className="section single-blog mt-6">
@@ -44,6 +43,9 @@ const PostSingle = ({
               <article>
                 <div className="relative">
                   {image && (
+                    // <h1>{image}</h1>
+                    // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+                    // <img src="https://www.mindinventory.com/blog/wp-content/uploads/2022/10/flutter-3.png" className="rounded-lg"  width="1000" height="500"/>
                     <Image
                       src={image}
                       height="500"
@@ -51,6 +53,7 @@ const PostSingle = ({
                       alt={title}
                       className="rounded-lg"
                     />
+
                   )}
                   <ul className="absolute top-3 left-2 flex flex-wrap items-center">
                     {categories.map((tag, index) => (

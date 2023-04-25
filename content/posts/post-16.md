@@ -1,11 +1,13 @@
 ---
 title: "Flutter"
 date: 2022-04-04T14:00:00Z
-image: /https://www.mindinventory.com/blog/wp-content/uploads/2022/10/flutter-3.png
+image: /images/post/post-5.png
+# https://www.mindinventory.com/blog/wp-content/uploads/2022/10/flutter-3.png
 categories: ["Education","Programming","Flutter"]
 featured: false
 draft: false
 ---
+
 ### What is flutter
 
 Flutter is a mobile application development framework created by Google. It was first introduced in 2017 and has since gained a lot of popularity among developers. Flutter is an open-source platform that provides an extensive range of tools and widgets to create cross-platform apps for both Android and iOS.
