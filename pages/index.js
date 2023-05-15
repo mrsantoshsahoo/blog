@@ -31,7 +31,7 @@ const Home = ({
   return (
     <Base>
       {/* Banner */}
-      <section className="section banner relative pb-0">
+      <section className="section banner relative pb-0 top-24">
         <ImageFallback
           className="absolute bottom-0 left-0 z-[-1] w-full"
           src={"/images/banner-bg-shape.svg"}
@@ -113,7 +113,7 @@ const Home = ({
                                 <h3 className="h5 mb-2">
                                   <Link
                                     href={`/${blog_folder}/${post.slug}`}
-                                    className="block hover:text-primary"
+                                    className="block  hover:text-primary"
                                   >
                                     {post.frontmatter.title}
                                   </Link>
@@ -189,6 +189,7 @@ export const getStaticProps = async () => {
   const categories = getTaxonomy(`content/${blog_folder}`, "categories");
 
   const categoriesWithPostsCount = categories.map((category) => {
+  console.log(category);
     const filteredPosts = posts.filter((post) =>
       post.frontmatter.categories.includes(category)
     );

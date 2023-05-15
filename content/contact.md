@@ -1,18 +1,18 @@
 ---
 title: "Let’s, Talk </br> About You"
 description: "meta description"
-phone: "+211234565523"
-mail: "info@email.com"
-location: "9567 Turner Trace Apt. BC C3G8A4"
+phone: "+91-9778121032"
+mail: "smartgrworldwide@email.com"
+location: "India"
 form_action: "#"
 layout: "contact"
 addresses:
   - icon: FaUserAlt
-    content: +211234565523
-    link: tel:+211234565523
+    content: +91-9778121032
+    link: tel:+91-9778121032
   - icon: FaMapMarkerAlt
-    content: info@email.com
-    link: mailto:info@email.com
+    content: smartgrworldwide@email.com
+    link: mailto:smartgrworldwide@email.com
   - icon: FaLocation
     content: 9567 Turner Trace Apt. BC C3G8A4
 

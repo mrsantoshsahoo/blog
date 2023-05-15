@@ -9,7 +9,7 @@ const Contact = ({ data }) => {
   const { title, form_action, phone, mail, location } = frontmatter;
 
   return (
-    <section className="section lg:mt-16">
+    <section className="section lg:mt-16 ">
       <div className="container">
         <div className="row relative pb-16">
           <ImageFallback

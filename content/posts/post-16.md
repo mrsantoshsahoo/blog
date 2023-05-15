@@ -1,8 +1,7 @@
 ---
 title: "Flutter"
 date: 2022-04-04T14:00:00Z
-image: /images/post/post-5.png
-# https://www.mindinventory.com/blog/wp-content/uploads/2022/10/flutter-3.png
+image: https://www.mindinventory.com/blog/wp-content/uploads/2022/10/flutter-3.png
 categories: ["Education","Programming","Flutter"]
 featured: false
 draft: false

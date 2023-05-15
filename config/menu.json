@@ -5,6 +5,11 @@
       "url": "/"
     },
     {
+      "name": "Blogs",
+      "url": "/posts"
+    },
+
+    {
       "name": "About",
       "url": "/about"
     },
@@ -30,6 +35,11 @@
       "name": "Home",
       "url": "/"
     },
+    {
+      "name": "Blogs",
+      "url": "/posts"
+    },
+
     {
       "name": "About",
       "url": "/about"

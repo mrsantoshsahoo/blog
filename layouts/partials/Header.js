@@ -28,18 +28,36 @@ const Header = () => {
       document.body.classList.remove("menu-open");
     }
   }, [showMenu]);
+  // Sticky Navbar
+  const [sticky, setSticky] = useState(false);
+  const handleStickyNavbar = () => {
+    if (window.scrollY >= 80) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyNavbar);
+  });
 
   return (
-    <header className="header">
+    <header
+      className={`header top-0 left-0 z-40 flex w-full items-center bg-transparent ${
+      sticky
+        ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm !transition dark:!bg-black dark:!bg-opacity-20"
+        : "absolute"
+    }`}
+  >
       <nav className="navbar container px-1 sm:px-8">
         <div className="order-0">
           <Logo />
         </div>
         <div className="flex items-center space-x-4 xl:space-x-8">
-          <div
+        <div
             className={`collapse-menu ${
               !showMenu && "translate-x-full"
-            } lg:flex lg:translate-x-0`}
+            } lg:flex lg:translate-x-0  dark:!bg-transparent`}
           >
             <button
               className="absolute right-6 top-11 lg:hidden"

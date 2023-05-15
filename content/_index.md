@@ -1,8 +1,8 @@
 ---
 banner:
   title: Welcome **!**
-  title_small: "to John Bravo's Blog"
-  content: Are Developer and recently started your own business Already made website to ensure presence wants to develop.
+  title_small: "to Smart Groww"
+  content: Expanding globally requires strategic planning and a deep understanding of cultural and economic differences. Smart growth involves identifying opportunities and building sustainable relationships with local communities..
   image_enable: true
   image: /images/banner-author.png
   button:

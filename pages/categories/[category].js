@@ -10,9 +10,9 @@ const { blog_folder } = config.settings;
 // category page
 const Category = ({ postsByCategories, category, posts, categories }) => {
   return (
-    <Base title={category}>
-      <div className="section mt-16">
-        <div className="container">
+    <Base title={category} >
+      <div className="section mt-16 ">
+        <div className="container ">
           <h1 className="h2 mb-12">
             Showing posts from
             <span className="section-title ml-1 inline-block capitalize">

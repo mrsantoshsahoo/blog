@@ -1,3 +1,4 @@
+import Blogs from "../layouts/Blogs";
 import NotFound from "../layouts/404";
 import About from "../layouts/About";
 import Base from "../layouts/Baseof";
@@ -22,7 +23,11 @@ const RegularPages = ({ data }) => {
     >
       {layout === "404" ? (
         <NotFound data={data} />
-      ) : layout === "about" ? (
+      )
+      : layout === "blogs" ? (
+        <Blogs data={data} />
+      )
+       : layout === "about" ? (
         <About data={data} />
       ) : layout === "contact" ? (
         <Contact data={data} />
@@ -41,8 +46,9 @@ export const getStaticPaths = async () => {
     params: {
       regular: item.slug,
     },
-  }));
 
+  }));
+  console.log(paths);
   return {
     paths,
     fallback: false,

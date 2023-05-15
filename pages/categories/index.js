@@ -9,8 +9,8 @@ import { FaFolder } from "react-icons/fa";
 
 const Categories = ({ categories }) => {
   return (
-    <Base title={"categories"}>
-      <section className="section pt-0">
+    <Base title={"categories"} >
+      <section className="section banner relative pb-0 top-6">
         {markdownify(
           "Categories",
           "h1",

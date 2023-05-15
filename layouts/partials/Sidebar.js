@@ -6,11 +6,26 @@ import CustomForm from "../../layouts/components/NewsLetterForm";
 import Social from "../../layouts/components/Social";
 import dateFormat from "../../lib/utils/dateFormat";
 import { sortByDate } from "../../lib/utils/sortFunctions";
-import { markdownify } from "../../lib/utils/textConverter";
+import { humanize, markdownify } from "../../lib/utils/textConverter";
 import Link from "next/link";
+import * as React from "react";
 import { useState } from "react";
 import { FaRegCalendar } from "react-icons/fa";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import { FaFolder } from "react-icons/fa";
+import { Dropdown } from "@nextui-org/react";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ListItem from "@mui/material/ListItem";
+import ListSubheader from "@mui/material/ListSubheader";
+import Collapse from "@mui/material/Collapse";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import DraftsIcon from "@mui/icons-material/Drafts";
+import SendIcon from "@mui/icons-material/Send";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
 const { blog_folder } = config.settings;
 const { about, featured_posts, newsletter } = config.widgets;
 
@@ -19,27 +34,109 @@ const Sidebar = ({ posts, categories, className }) => {
   const featuredPosts = sortPostByDate.filter(
     (post) => post.frontmatter.featured
   );
-
-  const [showRecent, setShowRecent] = useState(true);
-
+  const lists = [
+    {
+      category: "Category 1",
+      id: 1,
+      select: true,
+      sub_category_list: [
+        { sub_category: "sub category 1" },
+        { sub_category: "sub category 2" },
+      ],
+    },
+    {
+      category: "Category 2",
+      id: 2,
+      select: true,
+      sub_category_list: [
+        { sub_category: "sub category 3" },
+        { sub_category: "sub category 4" },
+        { sub_category: "sub category 5" },
+      ],
+    },
+    {
+      category: "Category 3",
+      id: 2,
+      select: true,
+      sub_category_list: [
+        { sub_category: "sub category 3" },
+        { sub_category: "sub category 4" },
+        { sub_category: "sub category 5" },
+      ],
+    },
+  ];
+  const [showRecent, setShowRecent] = useState(false);
+  const [open, setOpens] = useState(true);
+  const [sections, setSections] = useState(lists);
+  const handleSectionToggle = (index) => {
+    setSections((prevState) =>
+      prevState.map((section, i) =>
+        i === index ? { ...section, open: !section.open } : section
+      )
+    );
+  };
+  const handleClicks = () => {
+    setOpens(!opens);
+  };
   return (
-    <aside className={`${className} px-0 lg:px-6 lg:col-4`}>
-      {about.enable && (
-        <div className="relative rounded border border-border p-6 text-center dark:border-darkmode-border">
-          <ImageFallback
-            className="-z-[1]"
-            src="/images/map.svg"
-            fill={true}
-            alt="bg-map"
-          />
-          <Logo />
-          {markdownify(about.content, "p", "mt-8")}
-          <Social
-            className="socials sidebar-socials mt-6 justify-center"
-            source={social}
-          />
-        </div>
-      )}
+    <aside className={`${className} px-0 lg:col-4 lg:px-6`}>
+      {/* <section className="section banner relative pb-0 "> */}
+      {markdownify("Categories", "h4", "h1 py-2 text-center lg:text-[55px]")}
+
+      <div className="container  pb-12 text-start">
+        <ul className="Column">
+          {categories.map((category, i) => (
+            <li key={`category-${i}`} className="mt-4 block ">
+              <Link
+                href={`/categories/${category.name}`}
+                className="flex w-full items-center justify-center rounded-lg bg-theme-light px-4 py-4 font-bold text-dark transition  hover:bg-violet-500 hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-primary dark:hover:text-white"
+              >
+                {/* <FaFolder className="mr-1.5" /> */}
+                {humanize(category.name)}
+              </Link>
+            </li>
+          ))}
+          <li key="" className="mt-4 block ">
+            <Link
+              href={`/categories`}
+              className="flex w-full items-center justify-center rounded-lg bg-blue-600  px-4 py-4 font-bold text-white transition hover:bg-blue-600 hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-blue-600 dark:hover:text-white"
+            >
+              Show all
+            </Link>
+          </li>
+        </ul>
+        {/* <List
+          sx={{
+            width: "100%",
+            maxWidth: 360,
+            bgcolor: "background.paper",
+            position: "relative",
+            overflow: "auto",
+            maxHeight: 300,
+            "& ul": { padding: 0 },
+          }}
+          subheader={<li />}
+        >
+          {sections.map((section, index) => (
+            <li key={`section-${section.id}`}>
+              <ul>
+                <ListItemButton  onClick={() => handleSectionToggle(index)}>
+                  <ListItemText primary={section.category} />
+                  {section.open ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+                {section.open &&
+                section.sub_category_list.map((item) => (
+                    <ListItemButton key={`item-${section.id}-${item.sub_category}`}>
+                      <ListItemText primary={`Item ${item.sub_category}`} />
+                    </ListItemButton>
+                  ))}
+              </ul>
+            </li>
+          ))}
+        </List> */}
+
+      </div>
+      {/* </section> */}
 
       {/* categories widget */}
       {categories.enable && (
@@ -75,7 +172,7 @@ const Sidebar = ({ posts, categories, className }) => {
                 </svg>
                 <Link className="py-2" href={`/categories/${category.name}`}>
                   {category.name.replace("-", " ")}
-                  <span className="absolute top-1/2 right-0 -translate-y-1/2 text-[10px] text-gray-500">
+                  <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[10px] text-gray-500">
                     {category.posts}
                   </span>
                 </Link>
@@ -87,7 +184,7 @@ const Sidebar = ({ posts, categories, className }) => {
 
       {/* featured widget */}
       {featured_posts.enable && (
-        <div className="mt-6 rounded border border-border p-6 dark:border-darkmode-border">
+        <div className="rounded border border-border p-6 dark:border-darkmode-border">
           <h4 className="section-title mb-12 text-center">Featured</h4>
           <div className="mb-12 flex items-center justify-center">
             <button
@@ -205,6 +302,23 @@ const Sidebar = ({ posts, categories, className }) => {
               Privacy Policy
             </Link>
           </p>
+        </div>
+      )}
+
+      {about.enable && (
+        <div className="relative mt-6 rounded border border-border p-6 text-center dark:border-darkmode-border">
+          <ImageFallback
+            className="-z-[1]"
+            src="/images/map.svg"
+            fill={true}
+            alt="bg-map"
+          />
+          <Logo />
+          {markdownify(about.content, "p", "mt-8")}
+          <Social
+            className="socials sidebar-socials mt-6 justify-center"
+            source={social}
+          />
         </div>
       )}
     </aside>
