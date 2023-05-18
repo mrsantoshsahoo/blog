@@ -32,7 +32,7 @@ const SearchPage = () => {
       <div className="section banner relative pb-0 top-12">
         <div className="container">
           <h1 className="h2 mb-8 text-center">
-            Search results for <span className="text-primary">{query.key}</span>
+            Search results for <span className="text-violet-500">{query.key}</span>
           </h1>
           {searchResults.length > 0 ? (
             <div className="row">

@@ -10,7 +10,7 @@ const Button = ({ href, type, rel, children }) => {
       }`}
       className={`btn me-4 mb-4 ${
         type === "outline" ? "btn-outline-primary" : "btn-primary"
-      } border-primary hover:text-white hover:no-underline`}
+      } border-violet-500 hover:text-white hover:no-underline`}
     >
       {children}
     </Link>

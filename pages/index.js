@@ -113,7 +113,7 @@ const Home = ({
                                 <h3 className="h5 mb-2">
                                   <Link
                                     href={`/${blog_folder}/${post.slug}`}
-                                    className="block  hover:text-primary"
+                                    className="block  hover:text-violet-500"
                                   >
                                     {post.frontmatter.title}
                                   </Link>

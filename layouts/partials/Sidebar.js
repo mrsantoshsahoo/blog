@@ -99,7 +99,7 @@ const Sidebar = ({ posts, categories, className }) => {
           <li key="" className="mt-4 block ">
             <Link
               href={`/categories`}
-              className="flex w-full items-center justify-center rounded-lg bg-blue-600  px-4 py-4 font-bold text-white transition hover:bg-blue-600 hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-blue-600 dark:hover:text-white"
+              className="flex w-full items-center justify-center rounded-lg bg-blue-600  px-4 py-4 font-bold text-white transition hover:text-white  dark:bg-darkmode-theme-dark dark:text-darkmode-light dark:hover:bg-blue-600 dark:hover:text-white"
             >
               Show all
             </Link>
@@ -228,7 +228,7 @@ const Sidebar = ({ posts, categories, className }) => {
                       <h3 className="h5 mb-2">
                         <Link
                           href={`/${blog_folder}/${post.slug}`}
-                          className="block hover:text-primary"
+                          className="block hover:text-violet-500"
                         >
                           {post.frontmatter.title}
                         </Link>
@@ -263,7 +263,7 @@ const Sidebar = ({ posts, categories, className }) => {
                       <h3 className="h5 mb-2">
                         <Link
                           href={`/${blog_folder}/${post.slug}`}
-                          className="block hover:text-primary"
+                          className="block hover:text-violet-500"
                         >
                           {post.frontmatter.title}
                         </Link>
@@ -297,7 +297,7 @@ const Sidebar = ({ posts, categories, className }) => {
             By Singing Up, You Agree To
             <Link
               href={newsletter.privacy_policy_page}
-              className="ml-1 text-primary"
+              className="ml-1 text-"
             >
               Privacy Policy
             </Link>

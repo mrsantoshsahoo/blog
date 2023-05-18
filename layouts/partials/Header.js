@@ -142,7 +142,7 @@ const Header = () => {
           </div>
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet-500 text-white lg:hidden"
           >
             {showMenu ? (
               <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
