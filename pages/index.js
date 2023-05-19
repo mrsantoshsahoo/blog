@@ -1,6 +1,5 @@
 import config from "../config/config.json";
 import Base from "../layouts/Baseof";
-import DEmo from "./deo";
 import ImageFallback from "../layouts/components/ImageFallback";
 import Pagination from "../layouts/components/Pagination";
 import Post from "../layouts/partials/Post";
