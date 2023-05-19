@@ -1,8 +1,8 @@
 ---
-title: "How to make toys from old Olarpaper"
-date: 2022-04-04T04:00:00Z
-image: /images/post/post-4.png
-categories: ["robotics", "programming"]
+title: "first x 2023 movie"
+date: 2022-04-04T11:00:00Z
+image: /images/post/post-3.png
+categories: ["assistance"]
 featured: false
 draft: false
 ---

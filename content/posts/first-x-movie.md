@@ -1,9 +1,9 @@
 ---
-title: "My work from home workstation"
-date: 2022-04-04T10:00:00Z
-image: /images/post/post-2.png
-categories: ["programming"]
-featured: false
+title: "first x movie"
+date: 2022-04-04T12:00:00Z
+image: /images/post/post-4.png
+categories: ["github"]
+featured: true
 draft: false
 ---
 

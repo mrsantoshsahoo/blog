@@ -1,9 +1,9 @@
 ---
-title: My work from home workstation
-date: 2022-04-04T02:00:00Z
-image: /images/post/post-2.png
-categories: ["drone"]
-featured: true
+title: "Fixurissue"
+date: 2022-04-04T07:00:00Z
+image: /images/post/post-7.png
+categories: ["programming", "youtube"]
+featured: false
 draft: false
 ---
 

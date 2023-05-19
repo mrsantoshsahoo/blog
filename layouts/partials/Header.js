@@ -57,7 +57,7 @@ const Header = () => {
         <div
             className={`collapse-menu ${
               !showMenu && "translate-x-full"
-            } lg:flex lg:translate-x-0  dark:!bg-transparent`}
+            } lg:flex lg:translate-x-0  dark:!bg-black`}
           >
             <button
               className="absolute right-6 top-11 lg:hidden"
@@ -142,7 +142,7 @@ const Header = () => {
           </div>
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet-500 text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white lg:hidden"
           >
             {showMenu ? (
               <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">

@@ -1,5 +1,6 @@
 import config from "../config/config.json";
 import Base from "../layouts/Baseof";
+import DEmo from "./deo";
 import ImageFallback from "../layouts/components/ImageFallback";
 import Pagination from "../layouts/components/Pagination";
 import Post from "../layouts/partials/Post";
@@ -31,7 +32,11 @@ const Home = ({
   return (
     <Base>
       {/* Banner */}
+      {/* <DEmo post s={[{title:"what is flutter",satisfies:"sss"},{title:"kokk sksk sss",satisfies:"kwkds"}]}/> */}
+
+
       <section className="section banner relative pb-0 top-24">
+
         <ImageFallback
           className="absolute bottom-0 left-0 z-[-1] w-full"
           src={"/images/banner-bg-shape.svg"}
@@ -40,7 +45,15 @@ const Home = ({
           alt="banner-shape"
           priority
         />
-
+    {/* <ul>
+      {[{title:"what is flutter",satisfies:"sss"},{title:"kokk sksk sss",satisfies:"kwkds"}].map((post) => (
+        <li key={post.id}>
+          <Link href={`/demo/${(encodeURIComponent(post.title.replaceAll(' ','-')))}`}>
+            {post.title}
+          </Link>
+        </li>
+      ))}
+    </ul> */}
         <div className="container">
           <div className="row flex-wrap-reverse items-center justify-center lg:flex-row">
             <div className={banner.image_enable ? "mt-12 text-center lg:mt-0 lg:text-left lg:col-6" : "mt-12 text-center lg:mt-0 lg:text-left lg:col-12"}>
@@ -72,6 +85,7 @@ const Home = ({
                 </div>
             )}
           </div>
+
         </div>
       </section>
 
@@ -174,6 +188,7 @@ const Home = ({
           </div>
         </div>
       </section>
+
     </Base>
   );
 };
