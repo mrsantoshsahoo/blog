@@ -26,6 +26,7 @@ const Post = ({ post }) => {
               className="mx-2 inline-flex h-7 rounded-[35px] bg-primary px-3 text-white"
               key={"tag-" + index}
             >
+
               <Link
                 className="capitalize"
                 href={`/categories/${tag.replace(" ", "-")}`}
